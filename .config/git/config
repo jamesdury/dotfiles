@@ -1,0 +1,43 @@
+[core]
+    excludesfile = ~/.config/git/gitignore_global
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only --features=interactive
+[delta]
+    features = decorations
+    line-numbers = true
+    navigate = true
+    side-by-side = true
+[delta "interactive"]
+    keep-plus-minus-markers = true
+[delta "decorations"]
+    commit-decoration-style = blue ol
+    commit-style = raw
+    file-style = omit
+    hunk-header-decoration-style = blue box
+    hunk-header-file-style = red
+    hunk-header-line-number-style = "#01FF70"
+    hunk-header-style = file line-number syntax
+    minus-style = red "#FFEEEE"
+    plus-style = green "#3D9970"
+[init]
+    defaultBranch = main
+[commit]
+    verbose = true
+[rebase]
+    autosquash = true
+[push]
+    default = current
+[grep]
+    lineNumber = true
+[pull]
+    rebase = true
+[color "grep"]
+    filename = magenta
+    linenumber = green
+[alias]
+    slog = log --name-only
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
