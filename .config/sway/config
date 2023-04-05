@@ -23,7 +23,7 @@ bindsym $mod+t exec $XDG_CONFIG_HOME/waybar/scripts/toggle-makoctl.sh
 # hide notifications
 bindsym $mod+y exec /usr/bin/makoctl dismiss -a
 # lock screen
-bindsym $mod+l exec /usr/bin/swaylock -i $XDG_PICTURES_DIR/wallpaper/our-moon-small.jpg -s fill
+bindsym $mod+l exec /usr/bin/swaylock -i $XDG_PICTURES_DIR/wallpaper/lockscreen.jpg -s fill
 # kill focused window
 bindsym $mod+Shift+q kill
 
