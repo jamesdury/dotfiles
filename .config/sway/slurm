@@ -1,0 +1,10 @@
+output HDMI-A-1 pos 0 0 mode 2560x1440
+output eDP-1 mode 2560x1440 scale 2
+workspace 1 output HDMI-A-1
+
+for_window [class=".*"] border pixel 2
+for_window [class="^.*"] border pixel 2
+default_border pixel 2
+default_floating_border pixel 2
+
+gaps inner 5

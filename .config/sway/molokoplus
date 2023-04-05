@@ -1,0 +1,9 @@
+output HDMI-A-1 pos 0 0 mode 3840x2160@60hz scale 1.5
+exec swaybg -c "#CCCCCC"
+
+for_window [class=".*"] border pixel 4
+for_window [class="^.*"] border pixel 4
+default_border pixel 4
+default_floating_border pixel 4
+
+gaps inner 10
