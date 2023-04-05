@@ -1,0 +1,53 @@
+{
+    "position": "bottom",
+    "spacing": 0,
+    "modules-left": ["sway/workspaces", "custom/media"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["sway/mode","custom/mako","network","clock"],
+    "sway/workspaces": {
+        "disable-scroll": true
+    },
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "lorked": "",
+            "unlocked": ""
+        }
+    },
+    "sway/window": {
+        "tooltip": false
+    },
+    "sway/mode": {
+        "format": "{}"
+    },
+    "clock": {
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "custom/mako": {
+        "exec": "$XDG_CONFIG_HOME/waybar/scripts/makoctl.sh",
+        "on-click": "$XDG_CONFIG_HOME/waybar/scripts/toggle-makoctl.sh",
+        "restart-interval": 1,
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}",
+        "format-charging": "",
+        "format-plugged": "",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        "format-wifi": "{essid}",
+        "format-ethernet": "{ipaddr}/{cidr}",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+}
