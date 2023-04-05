@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+FILENAME=$(echo $RANDOM | base64 | head -c 20 | tr -dc '[:alpha:]')
+FILE=$1
+DEST="$HOME/$FILENAME.gif"
+
+cleanup() { mv $FILE /tmp/$FILENAME.mp4; }
+
+ffmpeg -hide_banner \
+    -loglevel error \
+    -i "$FILE" \
+    -filter_complex "fps=30,scale=640:-1:flags=lanczos,split [o1] [o2];[o1] palettegen [p]; [o2] fifo [o3];[o3] [p] paletteuse" \
+    "$DEST"
+
+echo "$DEST"
+
+trap cleanup EXIT

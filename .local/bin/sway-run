@@ -1,0 +1,20 @@
+#!/bin/sh
+
+export TERM=foot
+export XKB_DEFAULT_OPTIONS=caps:escape
+export GDK_BACKEND=wayland
+export XCURSOR_THEME=Adwaita
+export XDG_CURRENT_DESKTOP=sway
+export XDG_SESSION_TYPE=wayland
+export XDG_CURRENT_DESKTOP=sway
+export _JAVA_AWT_WM_NONREPARENTING=1
+export MOZ_ENABLE_WAYLAND=1
+
+if [ -z "$XDG_RUNTIME_DIR" ]
+then
+	mkdir -p /tmp/runtime/user
+	chmod 700 /tmp/runtime/user
+	export XDG_RUNTIME_DIR=/tmp/runtime/user
+fi
+
+exec sway > /tmp/sway.log 2>&1
