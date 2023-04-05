@@ -1,0 +1,8 @@
+#exec pkill goimapnotify
+exec pkill foot
+exec pkill mako
+
+exec foot -s > /tmp/foot.log 2>&1
+exec mako
+
+#exec goimapnotify -conf ~/.config/imapnotify/example.conf > /tmp/email-example.log 2>&1

@@ -107,10 +107,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-client.focused #7a5ccc #7a5ccc #7a5ccc #7a5ccc #7a5ccc
+client.focused #000000 #000000 #000000 #000000 #000000
 
-include ./private
 include ./`hostname`
+include ./private
+include ./startup
 
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec mako >/tmp/mako.log 2>&1
