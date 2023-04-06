@@ -1,0 +1,13 @@
+[bower:search_alias]
+default = ~d today AND NOT tag:deleted
+lw = ~d {last week}..
+2w = ~d {2 weeks ago}..
+lm = ~d {last month}..
+ly = ~d {last year}..
+notmuch = to:notmuch
+t = ~default
+inbox = ~A tag:inbox
+s = tag:sent
+a = subject:jira, subject:bitbucket
+f = tag:flagged
+u = tag:unread

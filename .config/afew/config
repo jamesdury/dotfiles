@@ -1,0 +1,20 @@
+[global]
+
+[SpamFilter]
+[KillThreadsFilter]
+[ListMailsFilter]
+
+[Filter.0]
+message = notify
+query = tag:new AND NOT tag:killed AND NOT tag:spam
+tags = +notify
+
+[Filter.1]
+query = 'from:".*[.]bitbucket.org/" OR from:".*[.]atlassian.net/"'
+tags = +atlassian;-unread;-new
+message = add tag to atlassian emails
+
+[ArchiveSentMailsFilter]
+sent_tag = sent
+
+[InboxFilter]

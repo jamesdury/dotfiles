@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+/usr/bin/afew -v --tag --new
+$HOME/.local/bin/notmuch-notify.py
