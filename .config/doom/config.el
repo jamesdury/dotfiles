@@ -85,3 +85,6 @@
 
 (setf (alist-get 'unpushed magit-section-initial-visibility-alist) 'show)
 (setq magit-log-section-commit-count 50)
+
+(with-eval-after-load 'flycheck
+  (add-hook 'flycheck-mode-hook #'flycheck-inline-mode))
