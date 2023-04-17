@@ -1,16 +1,5 @@
 #!/usr/bin/env python3
-
-# Send notifications for all mails with the "notify" tag via notify-send
-#
-# This is best used in combination with afew. To notify for all new messages just add
-# the following filter to your ~/.config/afew/config just before [InboxFilter]:
-#
-# [Filter.0]
-# message = notify
-# query = tag:new AND NOT tag:killed AND NOT tag:spam
-# tags = +notify
-#
-# Then run this script after each call to afew, e.g. in you notmuch post-new hook
+# Used the following for reference : https://gist.github.com/Nervengift/3262222875840d761f06784d9f8ba55e
 
 import datetime
 from datetime import datetime
