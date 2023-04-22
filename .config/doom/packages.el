@@ -52,4 +52,3 @@
 
 (package! disable-mouse)
 (package! deno-fmt)
-(package! flycheck-inline)
