@@ -59,11 +59,6 @@
     ;; for working with snake_case words
     (setq-default evil-symbol-word-search t))
 
-
-(add-hook 'typescript-mode-hook 'deno-fmt-mode)
-(add-hook 'js2-mode-hook 'deno-fmt-mode)
-
-
 (use-package! terraform-mode
   :hook
   (terraform-mode . terraform-format-on-save-mode)
@@ -85,6 +80,3 @@
 
 (setf (alist-get 'unpushed magit-section-initial-visibility-alist) 'show)
 (setq magit-log-section-commit-count 50)
-
-(with-eval-after-load 'flycheck
-  (add-hook 'flycheck-mode-hook #'flycheck-inline-mode))
