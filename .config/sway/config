@@ -8,14 +8,12 @@ input * {
 }
 
 focus_follows_mouse no
-
+# slack is always on workspace2
 for_window [class="Slack"] move to workspace $ws2
+# sharing indicator is displayed when sharing camera and gets in the way in tilingwm's
 for_window [app_id="firefox" title="Firefox — Sharing Indicator"] kill
-
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-
 # start a terminal
 bindsym $mod+Return exec /usr/bin/footclient
 # toggle notifications
@@ -26,9 +24,10 @@ bindsym $mod+y exec /usr/bin/makoctl dismiss -a
 bindsym $mod+l exec /usr/bin/swaylock -i $XDG_PICTURES_DIR/wallpaper/lockscreen.jpg -s fill
 # kill focused window
 bindsym $mod+Shift+q kill
-
 # start rofi launcher https://github.com/adi1090x/rofi
 bindsym $mod+d exec --no-startup-id  $XDG_CONFIG_HOME/rofi/launchers/type-2/launcher.sh
+
+bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit? This will end your session.' -B 'Yes, exit' 'swaymsg exit'"
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -81,11 +80,9 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+# switch to the nearest left/right workspaces without providing a number
 bindsym $mod+Ctrl+Left exec swaymsg workspace prev_on_output
 bindsym $mod+Ctrl+Right exec swaymsg workspace next_on_output
-
-bindsym $mod+Shift+c sway reload
-bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit? This will end your session.' -B 'Yes, exit' 'swaymsg exit'"
 
 mode "resize" {
         bindsym j resize shrink width 10 px or 10 ppt
@@ -109,7 +106,9 @@ bindsym $mod+r mode "resize"
 
 client.focused #000000 #000000 #000000 #000000 #000000
 
+# custom config per machine
 include ./`hostname`
+# private config, does not get added to vcs
 include ./private
 include ./startup
 
