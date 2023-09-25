@@ -1,8 +1,0 @@
-*.patch
-.envrc
-.notes.txt
-.tempfile
-.vagrant
-.workspace
-channels.scm
-node_modules

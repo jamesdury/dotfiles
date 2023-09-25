@@ -1,3 +1,0 @@
-#!/bin/bash
-
-firefox -P personal $1 >/dev/null 2>&1 & disown -a
